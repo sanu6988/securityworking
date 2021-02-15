@@ -1,0 +1,12 @@
+PROCEDURE "evenOdd"(in x integer, out res string)
+   LANGUAGE SQLSCRIPT
+   SQL SECURITY INVOKER
+   --DEFAULT SCHEMA <default_schema_name>
+   READS SQL DATA AS
+BEGIN
+   if(mod(:x,2) = 0) then
+		res = 'Even';
+	else
+		res = 'Odd';
+	end if;
+END
